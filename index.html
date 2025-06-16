@@ -343,14 +343,21 @@
   	  </div>
   </div>
 </section>
-<section class="hero is-light compact-section">
-  <div class="hero-body">
-  	<div class="container">
-  	  <h2 class="title has-text-centered">Poster</h2>
-        	  <div id="adobe-pdf-view" style="height: 700px; border: 1px solid #dbdbdb;"></div>
-  	</div>
-  </div>
-</section>
+
+<!-- Paper poster -->
+<section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title">Poster</h2>
+  
+        <iframe  src="static/pdfs/AMSbench_full.pdf" width="100%" height="550">
+            </iframe>
+          
+        </div>
+      </div>
+    </section>
+  <!--End paper poster -->
+
   <section class="section compact-section" id="BibTeX">
   	<div class="container is-max-desktop content">
   	  <h2 class="title">BibTeX</h2>
@@ -383,29 +390,5 @@
   </div>
 </footer>
 
-<script type="text/javascript">
-    document.addEventListener("adobe_dc_view_sdk.ready", function () {
-        // IMPORTANT: To make this work on your website, you need a client ID.
-        // 1. Get a free client ID: https://developer.adobe.com/document-services/apis/pdf-embed/
-        // 2. Replace "<YOUR_ADOBE_CLIENT_ID>" below with your actual ID.
-        var adobeDCView = new AdobeDC.View({
-            clientId: "<YOUR_ADOBE_CLIENT_ID>", // <--- REPLACE THIS
-            divId: "adobe-pdf-view"
-        });
-        adobeDCView.previewFile({
-            content: {
-                // Ensure the PDF file is located at this path
-                location: { url: "static/pdfs/2505.24138v1.pdf" }
-            },
-            metaData: {
-                fileName: "AMSbench_Poster.pdf"
-            }
-        }, {
-            embedMode: "SIZED_CONTAINER",
-            showPrintPDF: true,
-            showDownloadPDF: true
-        });
-    });
-</script>
   </body>
   </html>
