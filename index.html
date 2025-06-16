@@ -32,6 +32,32 @@
   href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
+<style>
+    .compact-section {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+    .results-image {
+        max-width: 100%;
+        max-height: 400px;
+        margin: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .carousel-image {
+        max-height: 480px;
+        width: auto;
+        object-fit: contain;
+        margin: auto;
+    }
+    .hero.teaser .hero-body {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .publication-title {
+        margin-bottom: 1.5rem !important;
+    }
+</style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
@@ -113,7 +139,7 @@
   	  					
   
   	  					    	  					  <span class="link-block">
-  	  						<a href="static/pdfs/supplementary_material.pdf" target="_blank"
+  	  						<a href="static/pdfs/2505.24138v1.pdf" target="_blank"
   	  						class="external-link button is-normal is-rounded is-dark">
   	  						<span class="icon">
   	  							<i class="fas fa-file-pdf"></i>
@@ -151,7 +177,7 @@
   
   
 <section class="hero teaser">
-  <div class="hero-body" style="padding: 0;">
+  <div class="hero-body" style="padding-top: 0; padding-bottom: 2rem;">
   	<figure class="image is-fullwidth">
   	  <img src="static/images/AMSBench_banner.png" alt="AMSbench Teaser"
   			 style="width: 60%; height: auto; display: block; margin: 0 auto;">
@@ -162,11 +188,7 @@
   </div>
 </section>
   
-  
-  
-  
-  
-<section class="section">
+<section class="section compact-section">
   <div class="container is-max-desktop">
   	<h2 class="title is-3">Abstract</h2>
   	<div class="content has-text-justified">
@@ -193,216 +215,143 @@
   	</div>
   </div>
 </section>
-  
-  
-<section class="hero is-light is-small">
-  <div class="hero-body has-text-centered">
-  	<h1 class="title is-1 mmmu">
-  	  <span class="mmmu">AMSBench Benchmark</span>
+
+
+<section class="hero is-light">
+  <div class="hero-body compact-section has-text-centered">
+  	<h1 class="title is-2 mmmu">
+  	  <span class="mmmu">The AMSBench Benchmark</span>
   	</h1>
   </div>
 </section>
   
-<section class="section">
+<section class="section compact-section">
     <div class="container is-max-desktop">
-        <div class="content has-text-justified">
+        <div class="content has-text-justified" style="margin-bottom: 3rem;">
             <h2 class="title is-3 has-text-centered">Benchmark Introduction</h2>
             <p>
                 The design of Analog/Mixed-Signal (AMS) circuits is highly dependent on human expertise, and its automation has been a long-standing challenge. Although Multimodal Large Language Models (MLLMs) have achieved breakthroughs in many fields, their application in the AMS domain remains limited, and a comprehensive evaluation framework to systematically measure their capabilities is lacking. To fill this gap, we propose <strong>AMSbench</strong>, the first comprehensive benchmark designed to rigorously evaluate the three core capabilities of MLLMs in the AMS domain: <strong>Perception, Analysis, and Design</strong>.
             </p>
         </div>
+
+        <div class="columns is-vcentered">
+            <div class="column">
+                <h3 class="title is-4">Data Collection & Curation</h3>
+                <p class="has-text-justified">
+                    To build a comprehensive benchmark, we collected data from various sources, including academic textbooks, research papers, and industrial datasheets. We used tools like MinerU to convert PDFs and AMSnet to generate netlists from schematics. We then combined expert annotations with MLLM outputs to create high-quality "circuit-caption" data pairs.
+                </p>
+            </div>
+            <div class="column">
+                <figure class="image">
+                    <img src="static/images/data_collection.png" alt="Data Collection Pipeline" class="results-image">
+                </figure>
+            </div>
+        </div>
+
+        <div class="columns is-vcentered" style="margin-top: 2rem;">
+            <div class="column">
+                <figure class="image">
+                    <img src="static/images/question_generation.png" alt="Question Generation Examples" class="results-image">
+                </figure>
+            </div>
+            <div class="column">
+                <h3 class="title is-4">Question Generation & Task Design</h3>
+                <p class="has-text-justified">
+                    AMSbench covers both Visual and Textual Question Answering (VQA/TQA) with multiple formats. Questions are tiered into three difficulty levels (Easy, Medium, Hard) to simulate knowledge requirements from undergraduate to professional engineer levels, ensuring a thorough evaluation of model capabilities.
+                </p>
+            </div>
+        </div>
     </div>
 </section>
-  
-<section class="hero teaser">
-    <div class="hero-body">
-<div class="container is-max-desktop">
-            <h3 class="title is-4 has-text-centered">Evaluation & Findings</h3>
-            <p class="has-text-justified">
-                We conducted a comprehensive evaluation of eight leading closed-source and open-source models, including GPT-4o, Gemini-2.5-pro, and Qwen2.5-VL. The results show that while some models perform reasonably well on basic tasks, they generally have significant limitations in complex multimodal reasoning and design tasks.
-            </p>
-            <ul style="margin-top: 1rem; margin-bottom: 1rem;">
-                <li><b>Perception:</b> Most models perform reasonably in identifying local connections but struggle to extract a complete circuit netlist. Even the best-performing model, Gemini-2.5-pro, requires substantial modifications to align with the ground truth.</li>
-                <li><b>Analysis:</b> Models show potential in analyzing circuit functions but perform poorly when understanding the trade-offs between performance metrics common in the industry, with even GPT-4o achieving only 58% accuracy on this task.</li>
-                <li><b>Design:</b> Models perform well on simple circuit designs but struggle with complex and system-level circuits (like SAR-ADCs). Critically, almost all models fail to generate syntactically correct testbenches.</li>
-            </ul>
+
+<section class="section compact-section">
+    <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Evaluation & Findings</h2>
+        <div class="columns is-vcentered">
+            <div class="column is-6">
+                <p class="has-text-justified">
+                    We evaluated 8 leading models, including GPT-4o and Gemini-2.5-pro. Our findings reveal significant limitations in current SOTA models, especially in complex reasoning and design.
+                </p>
+                <ul>
+                    <li><b>Perception:</b> Models struggle to extract complete, accurate netlists.</li>
+                    <li><b>Analysis:</b> They show potential but fail to grasp key performance trade-offs.</li>
+                    <li><b>Design:</b> Performance is poor on complex circuits, and models cannot generate valid testbenches.</li>
+                </ul>
+            </div>
+            <div class="column is-6">
+                 <figure class="image">
+                    <img src="static/images/rada.png" alt="Model Performance Radar Chart" class="results-image">
+                 </figure>
+            </div>
         </div>
-  	<figure class="image is-fullwidth">
-  	  <img src="static/images/rada.png" alt="Performance across MLLMs in various tasks."
-  			 style="width: 40%; height: auto; display: block; margin: 0 auto;">
-  	</figure>
-  	<h2 class="subtitle has-text-centered mt-4">
-        Radar chart of MLLM performance on 14 sub-tasks.
-  	</h2>
-  </div>
-</section>
-  
-<section class="hero teaser">
-    <div class="hero-body">
-<div class="container is-max-desktop">
-            <h3 class="title is-4 has-text-centered">Data Collection & Curation</h3>
-            <p class="has-text-justified">
-                To build a comprehensive benchmark, we collected data from various sources, including academic textbooks, research papers, and industrial commercial circuit datasheets. We used tools like MinerU to convert PDF documents into Markdown format for efficient extraction of visual elements such as circuit diagrams and tables. For circuit diagrams, we utilized the AMSnet tool to accurately convert them into netlists to recover their topology. Additionally, we combined manual annotations from domain experts with the outputs of advanced MLLMs to generate high-quality "circuit schematic-caption" data pairs.
-            </p>
+        <div class="columns" style="margin-top: 2rem;">
+            <div class="column"><img src="static/images/tab_perception.png" alt="Perception Task Results" class="results-image"></div>
+            <div class="column"><img src="static/images/tab_multitask.png" alt="Interconnect and Analysis Results" class="results-image"></div>
         </div>
-  	<figure class="image is-fullwidth">
-  	  <img src="static/images/data_collection.png" alt="Details of AMSBench Data Collection."
-  			 style="width: 40%; height: auto; display: block; margin: 0 auto;">
-  	</figure>
-  	<h2 class="subtitle has-text-centered mt-4">
-        The data collection and curation pipeline for AMSBench.
-  	</h2>
-  </div>
-</section>
-  
-<section class="hero teaser">
-    <div class="hero-body">
-<div class="container is-max-desktop">
-            <h3 class="title is-4 has-text-centered">Question Generation & Task Design</h3>
-            <p class="has-text-justified">
-                The goal of AMSbench is to thoroughly evaluate the potential applications of MLLMs in the AMS circuit domain. We designed tasks covering both Visual Question Answering (VQA) and Textual Question Answering (TQA) formats, including multiple-choice, computational, and open-ended generative questions. To systematically evaluate, we categorized the questions into three difficulty levels (easy, medium, hard) and designed them for different circuit types to simulate the knowledge requirements at different stages, from undergraduate and graduate students to engineers.
-            </p>
+        <div class="has-text-centered" style="margin-top: 1rem;">
+            <figure class="image" style="max-width: 600px; margin: auto;">
+                 <img src="static/images/tab_design_tb.png" alt="Design Task Results" class="results-image">
+            </figure>
         </div>
-  	<figure class="image is-fullwidth">
-  	  <img src="static/images/question_generation.png" alt="Details of AMSBench Question Generation."
-  			 style="width: 40%; height: auto; display: block; margin: 0 auto;">
-  	</figure>
-  	<h2 class="subtitle has-text-centered mt-4">
-        Examples of question generation for perception (left) and analysis (right) tasks.
-  	</h2>
-  </div>
-</section>
-  
-<section class="hero teaser">
-  <div class="hero-body">
-  	<div class="container is-max-desktop">
-        <h3 class="title is-4 has-text-centered">Perception Task Results</h3>
-        <p class="has-text-justified">
-            The perception task aims to evaluate the MLLM's ability to extract netlists from circuit diagrams, which includes component counting, classification, and connection identification. The table below shows the performance of various models on basic perception tasks such as component counting, classification, and location description.
-        </p>
     </div>
-  	<figure class="image is-fullwidth">
-  	  <img src="static/images/tab_perception.png" alt="Results of AMSBench Perception Task."
-  			 style="width: 70%; height: auto; display: block; margin: 0 auto;">
-  	</figure>
-  	<h2 class="subtitle has-text-centered mt-4">
-        Detailed comparison of models across various perception tasks.
-  	</h2>
-  </div>
 </section>
-  
-<section class="hero teaser">
-    <div class="hero-body">
-<div class="container is-max-desktop">
-            <h3 class="title is-4 has-text-centered">Comprehensive Task Results</h3>
-            <p class="has-text-justified">
-                The table below further shows the performance of the models on more complex perception tasks, such as connection judgment and topology generation (netlist recognition), as well as on analysis tasks like reasoning, partition identification, and caption generation.
-            </p>
-        </div>
-  	<figure class="image is-fullwidth">
-  	  <img src="static/images/tab_multitask.png" alt="Results of AMSBench various Task."
-  			 style="width: 70%; height: auto; display: block; margin: 0 auto;">
-  	</figure>
-  	<h2 class="subtitle has-text-centered mt-4">
-        Model performance on connection recognition and circuit analysis tasks.
-  	</h2>
-  </div>
+
+<section class="section compact-section">
+    <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Data Statistics</h2>
+        <p class="has-text-centered">The benchmark is carefully balanced across tasks and difficulty levels to provide a robust evaluation framework.</p>
+        <figure class="image">
+            <img src="static/images/data.png" alt="Data Statistics Pie Charts" style="max-width: 900px; margin: auto;">
+        </figure>
+    </div>
 </section>
-  
-<section class="hero teaser">
-    <div class="hero-body">
-<div class="container is-max-desktop">
-            <h3 class="title is-4 has-text-centered">Design Task Results</h3>
-            <p class="has-text-justified">
-                The design task evaluates whether a model can generate the correct circuit topology (Circuit Design) and the necessary simulation files for performance verification (Testbench Design) based on given specifications. We use pass@k as the evaluation metric.
-            </p>
-        </div>
-  	<figure class="image is-fullwidth">
-  	  <img src="static/images/tab_design_tb.png" alt="Results of AMSBench various Task."
-  			 style="width: 60%; height: auto; display: block; margin: 0 auto;">
-  	</figure>
-  	<h2 class="subtitle has-text-centered mt-4">
-        Performance comparison of models on Circuit Design and Testbench Design tasks.
-  	</h2>
-  </div>
+<section class="hero is-light">
+    <div class="hero-body compact-section has-text-centered">
+        <h1 class="title is-2 mmmu">
+            <span class="mmmu">Task Examples</span>
+        </h1>
+    </div>
 </section>
-  
-<section class="section">
-  <div class="columns is-centered has-text-centered">
-  	<h2 class="title is-1 mmmu">
-  	  <span class="mmmu">Examples of various tasks</span>
-  	</h2>
-  </div>
-</section>
-  
-<section class="hero is-small">
-  <div class="hero-body">
-  	<div class="container">
+
+<section class="section compact-section">
+  <div class="container is-max-desktop">
   	  <div id="results-carousel" class="carousel results-carousel">
-  	  	<div class="item">
-  	  	    	  	  <img src="static/images/perception.png" alt="Perception Task Example" style="display: block; margin: 0 auto; max-width: 70%;" />
-  	  	  <h2 class="subtitle has-text-centered">
-  	  	  	<b>Perception Task Example:</b> Includes total/type-wise counting, location description, connection judgment, and topology generation.
+  	  	<div class="item has-text-centered">
+  	  	  <img src="static/images/perception.png" alt="Perception Task Example" class="carousel-image" />
+  	  	  <h2 class="subtitle has-text-centered mt-4">
+  	  	  	<b>Perception Task:</b> Includes total/type-wise counting, location description, connection judgment, and topology generation.
   	  	  </h2>
   	  	</div>
-  	  	<div class="item">
-  	  	    	  	  <img src="static/images/partition.png" alt="Partition Task Example" style="display: block; margin: 0 auto; max-width: 70%;" />
-  	  	  <h2 class="subtitle has-text-centered">
-  	  	  	<b>Partition Task Example:</b> The model must identify all constituent structures in a complex circuit, such as differential pair and Miller compensation.
+  	  	<div class="item has-text-centered">
+  	  	  <img src="static/images/partition.png" alt="Partition Task Example" class="carousel-image" />
+  	  	  <h2 class="subtitle has-text-centered mt-4">
+  	  	  	<b>Partition Task:</b> The model must identify all constituent structures in a complex circuit, such as differential pair and Miller compensation.
   	  	  </h2>
   	  	</div>
-  	  	<div class="item">
-  	  	    	  	  <img src="static/images/reasoning.png" alt="Reasoning Task Example" style="display: block; margin: 0 auto; max-width: 70%;" />
-  	  	  <h2 class="subtitle has-text-centered">
-  			   <b>Reasoning Task Example:</b> Based on the circuit diagram, the model must explain why it is an operational amplifier.
+  	  	<div class="item has-text-centered">
+  	  	  <img src="static/images/reasoning.png" alt="Reasoning Task Example" class="carousel-image" />
+  	  	  <h2 class="subtitle has-text-centered mt-4">
+  			   <b>Reasoning Task:</b> Based on the circuit diagram, the model must explain why it functions as an operational amplifier.
   	  	  </h2>
   	  	</div>
-  	  	<div class="item">
-  	  	    	  	  <img src="static/images/function.png" alt="Function Task Example" style="display: block; margin: 0 auto; max-width: 70%;" />
-  	  	  <h2 class="subtitle has-text-centered">
-  			   <b>Function Task Example:</b> The model must determine the intended function of the given circuit diagram.
+  	  	<div class="item has-text-centered">
+  	  	  <img src="static/images/function.png" alt="Function Task Example" class="carousel-image" />
+  	  	  <h2 class="subtitle has-text-centered mt-4">
+  			   <b>Function Task:</b> The model must determine the intended function of the given circuit diagram.
   	  	  </h2>
   	  	</div>
   	  </div>
-	</div>
   </div>
 </section>
-  
-<section class="hero teaser">
-    <div class="hero-body">
-<div class="container is-max-desktop">
-            <h3 class="title is-4 has-text-centered">Data Statistics</h3>
-            <p class="has-text-justified">
-                The data in AMSbench is carefully designed and balanced in terms of task types and difficulty levels. The left pie chart shows the number of questions and difficulty distribution for various sub-tasks in the perception category (e.g., total counting, type-wise counting, connection identification). The right chart shows the same for the analysis category (e.g., function identification, reasoning, captioning), distributed by the required knowledge level (Undergraduate, Graduate, Engineer).
-            </p>
-        </div>
-  	<figure class="image is-fullwidth">
-  	  <img src="static/images/data.png" alt="Data statistics of AMSBench."
-  			 style="width: 70%; height: auto; display: block; margin: 0 auto;">
-  	</figure>
-  	<h2 class="subtitle has-text-centered mt-4">
-        Data statistics pie charts for the Perception Task (left) and Analysis Task (right).
-  	</h2>
-  </div>
-</section>
-  
-  
-  
-  
-<section class="hero is-small is-light">
+<section class="hero is-light compact-section">
   <div class="hero-body">
   	<div class="container">
-  	  <h2 class="title">Poster</h2>
-  
-  	  <iframe  src="static/pdfs/AMSbench_full.pdf" width="100%" height="550">
-  			</iframe>
-  		  
+  	  <h2 class="title has-text-centered">Poster</h2>
+        	  <div id="adobe-pdf-view" style="height: 700px; border: 1px solid #dbdbdb;"></div>
   	</div>
-    </div>
-  </section>
-  
-  
-  <section class="section" id="BibTeX">
+  </div>
+</section>
+  <section class="section compact-section" id="BibTeX">
   	<div class="container is-max-desktop content">
   	  <h2 class="title">BibTeX</h2>
   	  <pre><code>@misc{shi2025amsbenchcomprehensivebenchmarkevaluating,
@@ -416,8 +365,6 @@
   }</code></pre>
   	</div>
 </section>
-  
-  
   <footer class="footer">
   <div class="container">
   	<div class="columns is-centered">
@@ -435,9 +382,30 @@
   	</div>
   </div>
 </footer>
-  
-  
-  
-  	  
+
+<script type="text/javascript">
+    document.addEventListener("adobe_dc_view_sdk.ready", function () {
+        // IMPORTANT: To make this work on your website, you need a client ID.
+        // 1. Get a free client ID: https://developer.adobe.com/document-services/apis/pdf-embed/
+        // 2. Replace "<YOUR_ADOBE_CLIENT_ID>" below with your actual ID.
+        var adobeDCView = new AdobeDC.View({
+            clientId: "<YOUR_ADOBE_CLIENT_ID>", // <--- REPLACE THIS
+            divId: "adobe-pdf-view"
+        });
+        adobeDCView.previewFile({
+            content: {
+                // Ensure the PDF file is located at this path
+                location: { url: "static/pdfs/2505.24138v1.pdf" }
+            },
+            metaData: {
+                fileName: "AMSbench_Poster.pdf"
+            }
+        }, {
+            embedMode: "SIZED_CONTAINER",
+            showPrintPDF: true,
+            showDownloadPDF: true
+        });
+    });
+</script>
   </body>
   </html>
