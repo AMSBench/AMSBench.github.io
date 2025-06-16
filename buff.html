@@ -215,124 +215,139 @@
 </section>
 
 
-<section class="section compact-section">
-    <div class="container is-max-desktop">
-        <div class="content has-text-justified" style="margin-bottom: 3rem;">
-            <h2 class="title is-3 has-text-centered">Benchmark Introduction</h2>
-            <p>
-                The design of Analog/Mixed-Signal (AMS) circuits is highly dependent on human expertise, and its automation has been a long-standing challenge. Although Multimodal Large Language Models (MLLMs) have achieved breakthroughs in many fields, their application in the AMS domain remains limited, and a comprehensive evaluation framework to systematically measure their capabilities is lacking. To fill this gap, we propose <strong>AMSbench</strong>, the first comprehensive benchmark designed to rigorously evaluate the three core capabilities of MLLMs in the AMS domain: <strong>Perception, Analysis, and Design</strong>.
-            </p>
-        </div>
-
-        <div class="columns is-vcentered">
-            <div class="column">
-                <h3 class="title is-4">Data Collection & Curation</h3>
-                <p class="has-text-justified">
-                    To build a comprehensive benchmark, we collected data from various sources, including academic textbooks, research papers, and industrial datasheets. We used tools like MinerU to convert PDFs and AMSnet to generate netlists from schematics. We then combined expert annotations with MLLM outputs to create high-quality "circuit-caption" data pairs.
-                </p>
-            </div>
-            <div class="column">
-                <figure class="image">
-                    <img src="static/images/data_collection.png" alt="Data Collection Pipeline" class="results-image">
-                </figure>
-            </div>
-        </div>
-
-        <div class="columns is-vcentered" style="margin-top: 2rem;">
-            <div class="column">
-                <figure class="image">
-                    <img src="static/images/question_generation.png" alt="Question Generation Examples" class="results-image">
-                </figure>
-            </div>
-            <div class="column">
-                <h3 class="title is-4">Question Generation & Task Design</h3>
-                <p class="has-text-justified">
-                    AMSbench covers both Visual and Textual Question Answering (VQA/TQA) with multiple formats. Questions are tiered into three difficulty levels (Easy, Medium, Hard) to simulate knowledge requirements from undergraduate to professional engineer levels, ensuring a thorough evaluation of model capabilities.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section compact-section">
-    <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Evaluation & Findings</h2>
-        <div class="columns is-vcentered">
-            <div class="column is-6">
-                <p class="has-text-justified">
-                    We evaluated 8 leading models, including GPT-4o and Gemini-2.5-pro. Our findings reveal significant limitations in current SOTA models, especially in complex reasoning and design.
-                </p>
-                <ul>
-                    <li><b>Perception:</b> Models struggle to extract complete, accurate netlists.</li>
-                    <li><b>Analysis:</b> They show potential but fail to grasp key performance trade-offs.</li>
-                    <li><b>Design:</b> Performance is poor on complex circuits, and models cannot generate valid testbenches.</li>
-                </ul>
-            </div>
-            <div class="column is-6">
-                 <figure class="image">
-                    <img src="static/images/rada.png" alt="Model Performance Radar Chart" class="results-image">
-                 </figure>
-            </div>
-        </div>
-        <div class="columns" style="margin-top: 2rem;">
-            <div class="column"><img src="static/images/tab_perception.png" alt="Perception Task Results" class="results-image"></div>
-            <div class="column"><img src="static/images/tab_multitask.png" alt="Interconnect and Analysis Results" class="results-image"></div>
-        </div>
-        <div class="has-text-centered" style="margin-top: 1rem;">
-            <figure class="image" style="max-width: 600px; margin: auto;">
-                 <img src="static/images/tab_design_tb.png" alt="Design Task Results" class="results-image">
-            </figure>
-        </div>
-    </div>
-</section>
-
-<section class="section compact-section">
-    <div class="container is-max-desktop">
-        <h2 class="title is-2 has-text-centered">Data Statistics</h2>
-        <p class="has-text-centered">The benchmark is carefully balanced across tasks and difficulty levels to provide a robust evaluation framework.</p>
-        <figure class="image">
-            <img src="static/images/data.png" alt="Data Statistics Pie Charts" style="max-width: 900px; margin: auto;">
-        </figure>
-    </div>
-</section>
-<section class="hero is-light">
-    <div class="hero-body compact-section has-text-centered">
-        <h1 class="title is-2 mmmu">
-            <span class="mmmu">Task Examples</span>
-        </h1>
-    </div>
-</section>
-
-<section class="section compact-section">
-  <div class="container is-max-desktop">
-  	  <div id="results-carousel" class="carousel results-carousel">
-  	  	<div class="item has-text-centered">
-  	  	  <img src="static/images/perception.png" alt="Perception Task Example" class="carousel-image" />
-  	  	  <h2 class="subtitle has-text-centered mt-4">
-  	  	  	<b>Perception Task:</b> Includes total/type-wise counting, location description, connection judgment, and topology generation.
-  	  	  </h2>
-  	  	</div>
-  	  	<div class="item has-text-centered">
-  	  	  <img src="static/images/partition.png" alt="Partition Task Example" class="carousel-image" />
-  	  	  <h2 class="subtitle has-text-centered mt-4">
-  	  	  	<b>Partition Task:</b> The model must identify all constituent structures in a complex circuit, such as differential pair and Miller compensation.
-  	  	  </h2>
-  	  	</div>
-  	  	<div class="item has-text-centered">
-  	  	  <img src="static/images/reasoning.png" alt="Reasoning Task Example" class="carousel-image" />
-  	  	  <h2 class="subtitle has-text-centered mt-4">
-  			   <b>Reasoning Task:</b> Based on the circuit diagram, the model must explain why it functions as an operational amplifier.
-  	  	  </h2>
-  	  	</div>
-  	  	<div class="item has-text-centered">
-  	  	  <img src="static/images/function.png" alt="Function Task Example" class="carousel-image" />
-  	  	  <h2 class="subtitle has-text-centered mt-4">
-  			   <b>Function Task:</b> The model must determine the intended function of the given circuit diagram.
-  	  	  </h2>
-  	  	</div>
-  	  </div>
+  
+<section class="hero teaser">
+  <div class="hero-body" style="padding: 0;">
+    <figure class="image is-fullwidth">
+      <img src="static/images/rada.png" alt="AMSbench Teaser"
+           style="width: 40%; height: auto; display: block; margin: 0 auto;">
+    </figure>
+    <h2 class="subtitle has-text-centered mt-4">
+      Performance across MLLMs in various tasks.
+    </h2>
   </div>
 </section>
+
+<section class="hero teaser">
+  <div class="hero-body" style="padding: 0;">
+    <figure class="image is-fullwidth">
+      <img src="static/images/data_collection.png" alt="AMSbench Teaser"
+           style="width: 40%; height: auto; display: block; margin: 0 auto;">
+    </figure>
+    <h2 class="subtitle has-text-centered mt-4">
+      Details of AMSBench Data Collection.
+    </h2>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body" style="padding: 0;">
+    <figure class="image is-fullwidth">
+      <img src="static/images/question_generation.png" alt="AMSbench Teaser"
+           style="width: 40%; height: auto; display: block; margin: 0 auto;">
+    </figure>
+    <h2 class="subtitle has-text-centered mt-4">
+       Details of AMSBench Question Generation.
+    </h2>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body" style="padding: 0;">
+    <figure class="image is-fullwidth">
+      <img src="static/images/tab_perception.png" alt="AMSbench Teaser"
+           style="width: 40%; height: auto; display: block; margin: 0 auto;">
+    </figure>
+    <h2 class="subtitle has-text-centered mt-4">
+       Results of AMSBench Perception Task.
+    </h2>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body" style="padding: 0;">
+    <figure class="image is-fullwidth">
+      <img src="static/images/tab_multitask.png" alt="AMSbench Teaser"
+           style="width: 40%; height: auto; display: block; margin: 0 auto;">
+    </figure>
+    <h2 class="subtitle has-text-centered mt-4">
+       Results of AMSBench various Task.
+    </h2>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body" style="padding: 0;">
+    <figure class="image is-fullwidth">
+      <img src="static/images/tab_design_tb.png" alt="AMSbench Teaser"
+           style="width: 40%; height: auto; display: block; margin: 0 auto;">
+    </figure>
+    <h2 class="subtitle has-text-centered mt-4">
+       Results of AMSBench various Task.
+    </h2>
+  </div>
+</section>
+
+<section class="section">
+  <div class="columns is-centered has-text-centered">
+    <h2 class="title is-1 mmmu">
+      <span class="mmmu">Examples of various tasks</span>
+    </h2>
+  </div>
+</section>
+  
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/perception.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto;" />
+          <h2 class="subtitle has-text-centered">
+            Examples of Perception Task.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/partition.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto;" />
+          <h2 class="subtitle has-text-centered">
+            Examples of Partition Task.
+          </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/perception.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto;" />
+        <h2 class="subtitle has-text-centered">
+         Examples of Reasoning Task.
+       </h2>
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/perception.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto;" />
+      <h2 class="subtitle has-text-centered">
+        Examples of Function Task.
+      </h2>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+<section class="hero teaser">
+  <div class="hero-body" style="padding: 0;">
+    <figure class="image is-fullwidth">
+      <img src="static/images/data.png" alt="AMSbench Teaser"
+           style="width: 70%; height: auto; display: block; margin: 0 auto;">
+    </figure>
+    <h2 class="subtitle has-text-centered mt-4">
+      Data statistics.
+    </h2>
+  </div>
+</section>
+
+
 
 
 <!-- Paper poster -->
