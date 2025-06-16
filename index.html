@@ -213,4 +213,225 @@
                 We conducted a comprehensive evaluation of eight leading closed-source and open-source models, including GPT-4o, Gemini-2.5-pro, and Qwen2.5-VL. The results show that while some models perform reasonably well on basic tasks, they generally have significant limitations in complex multimodal reasoning and design tasks.
             </p>
             <ul>
-                <li><b>Perception:</b> Most models perform
+                <li><b>Perception:</b> Most models perform reasonably in identifying local connections but struggle to extract a complete circuit netlist. Even the best-performing model, Gemini-2.5-pro, requires substantial modifications to align with the ground truth.</li>
+                <li><b>Analysis:</b> Models show potential in analyzing circuit functions but perform poorly when understanding the trade-offs between performance metrics common in the industry, with even GPT-4o achieving only 58% accuracy on this task.</li>
+                <li><b>Design:</b> Models perform well on simple circuit designs but struggle with complex and system-level circuits (like SAR-ADCs). Critically, almost all models fail to generate syntactically correct testbenches.</li>
+            </ul>
+        </div>
+    </div>
+      	<figure class="image is-fullwidth">
+  	  <img src="static/images/rada.png" alt="AMSbench Teaser"
+  			 style="width: 40%; height: auto; display: block; margin: 0 auto;">
+  	</figure>
+  	<h2 class="subtitle has-text-centered mt-4">
+  	  Performance across MLLMs in various tasks.
+  	</h2>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+        <h3 class="title is-4 has-text-centered">Data Collection & Curation</h3>
+        <div class="content has-text-justified">
+            <p>
+                To build a comprehensive benchmark, we collected data from various sources, including academic textbooks, research papers, and industrial commercial circuit datasheets. We used tools like MinerU to convert PDF documents into Markdown format for efficient extraction of visual elements such as circuit diagrams and tables. For circuit diagrams, we utilized the AMSnet tool to accurately convert them into netlists to recover their topology. Additionally, we combined manual annotations from domain experts with the outputs of advanced MLLMs to generate high-quality "circuit schematic-caption" data pairs.
+            </p>
+        </div>
+    </div>
+      	<figure class="image is-fullwidth">
+  	  <img src="static/images/data_collection.png" alt="AMSbench Teaser"
+  			 style="width: 40%; height: auto; display: block; margin: 0 auto;">
+  	</figure>
+  	<h2 class="subtitle has-text-centered mt-4">
+  	  Details of AMSBench Data Collection.
+  	</h2>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+        <h3 class="title is-4 has-text-centered">Question Generation & Task Design</h3>
+        <div class="content has-text-justified">
+            <p>
+                The goal of AMSbench is to thoroughly evaluate the potential applications of MLLMs in the AMS circuit domain. We designed tasks covering both Visual Question Answering (VQA) and Textual Question Answering (TQA) formats, including multiple-choice, computational, and open-ended generative questions. To systematically evaluate, we categorized the questions into three difficulty levels (easy, medium, hard) and designed them for different circuit types to simulate the knowledge requirements at different stages, from undergraduate and graduate students to engineers.
+            </p>
+        </div>
+    </div>
+      	<figure class="image is-fullwidth">
+  	  <img src="static/images/question_generation.png" alt="AMSbench Teaser"
+  			 style="width: 40%; height: auto; display: block; margin: 0 auto;">
+  	</figure>
+  	<h2 class="subtitle has-text-centered mt-4">
+  	  Details of AMSBench Question Generation.
+  	</h2>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+        <h3 class="title is-4 has-text-centered">Perception Task Results</h3>
+        <div class="content has-text-justified">
+            <p>
+                The perception task aims to evaluate the MLLM's ability to extract netlists from circuit diagrams, which includes component counting, classification, and connection identification. This table shows the performance of various models on basic perception tasks.
+            </p>
+        </div>
+    </div>
+      	<figure class="image is-fullwidth">
+  	  <img src="static/images/tab_perception.png" alt="AMSbench Teaser"
+  			 style="width: 40%; height: auto; display: block; margin: 0 auto;">
+  	</figure>
+  	<h2 class="subtitle has-text-centered mt-4">
+  	  Results of AMSBench Perception Task.
+  	</h2>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+        <h3 class="title is-4 has-text-centered">Comprehensive Task Results</h3>
+        <div class="content has-text-justified">
+            <p>
+                This table shows model performance on more complex perception tasks like connection and topology recognition, alongside analysis tasks such as reasoning, partition identification, and captioning.
+            </p>
+        </div>
+    </div>
+      	<figure class="image is-fullwidth">
+  	  <img src="static/images/tab_multitask.png" alt="AMSbench Teaser"
+  			 style="width: 40%; height: auto; display: block; margin: 0 auto;">
+  	</figure>
+  	<h2 class="subtitle has-text-centered mt-4">
+  	  Results of AMSBench various Task.
+  	</h2>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+        <h3 class="title is-4 has-text-centered">Design Task Results</h3>
+        <div class="content has-text-justified">
+            <p>
+                The design task evaluates a model's ability to generate circuit topologies and testbenches from specifications. We use pass@k as the primary metric to measure the success rate.
+            </p>
+        </div>
+    </div>
+      	<figure class="image is-fullwidth">
+  	  <img src="static/images/tab_design_tb.png" alt="AMSbench Teaser"
+  			 style="width: 40%; height: auto; display: block; margin: 0 auto;">
+  	</figure>
+  	<h2 class="subtitle has-text-centered mt-4">
+  	  Results of AMSBench various Task.
+  	</h2>
+  </div>
+</section>
+
+<section class="section">
+  <div class="columns is-centered has-text-centered">
+  	<h2 class="title is-1 mmmu">
+  	  <span class="mmmu">Examples of various tasks</span>
+  	</h2>
+  </div>
+</section>
+  
+<section class="hero is-small">
+  <div class="hero-body">
+  	<div class="container">
+  	  <div id="results-carousel" class="carousel results-carousel">
+          	  	<div class="item">
+  	  	    	  	  <img src="static/images/perception.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto;" />
+  	  	  <h2 class="subtitle has-text-centered">
+  	  	  	<b>Perception Task Example:</b> Includes total/type-wise counting, location description, connection judgment, and topology generation.
+  	  	  </h2>
+  	  	</div>
+  	  	<div class="item">
+  	  	    	  	  <img src="static/images/partition.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto;" />
+  	  	  <h2 class="subtitle has-text-centered">
+  	  	  	<b>Partition Task Example:</b> The model must identify all constituent structures in a complex circuit.
+  	  	  </h2>
+  	  	</div>
+  	  	<div class="item">
+  	  	    	  	  <img src="static/images/reasoning.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto;" />
+  	  	  <h2 class="subtitle has-text-centered">
+  			   <b>Reasoning Task Example:</b> The model must explain why the circuit is an operational amplifier.
+  	  	  </h2>
+  	  	</div>
+  	  	<div class="item">
+  	  	    	  	  <img src="static/images/function.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto;" />
+  	  	  <h2 class="subtitle has-text-centered">
+  			   <b>Function Task Example:</b> The model must identify the intended function of the given circuit.
+  	  	  </h2>
+  	  	</div>
+          	  </div>
+	</div>
+  </div>
+</section>
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+        <h3 class="title is-4 has-text-centered">Data Statistics</h3>
+        <div class="content has-text-justified">
+            <p>
+                The data in AMSbench is carefully designed and balanced in terms of task types and difficulty levels. The left pie chart shows the number of questions and difficulty distribution for various sub-tasks in the perception category. The right chart shows the same for the analysis category, distributed by the required knowledge level (Undergraduate, Graduate, Engineer).
+            </p>
+        </div>
+    </div>
+      	<figure class="image is-fullwidth">
+  	  <img src="static/images/data.png" alt="AMSbench Teaser"
+  			 style="width: 70%; height: auto; display: block; margin: 0 auto;">
+  	</figure>
+  	<h2 class="subtitle has-text-centered mt-4">
+  	  Data statistics.
+  	</h2>
+  </div>
+</section>
+
+<section class="hero is-small is-light">
+  <div class="hero-body">
+  	<div class="container">
+  	  <h2 class="title">Poster</h2>
+
+  	  <iframe  src="static/pdfs/AMSbench_full.pdf" width="100%" height="550">
+  			</iframe>
+  		  
+  	</div>
+    </div>
+  </section>
+  <section class="section" id="BibTeX">
+  	<div class="container is-max-desktop content">
+  	  <h2 class="title">BibTeX</h2>
+  	  <pre><code>@misc{shi2025amsbenchcomprehensivebenchmarkevaluating,
+  			title={AMSbench: A Comprehensive Benchmark for Evaluating MLLM Capabilities in AMS Circuits}, 
+  			author={Yichen Shi and Ze Zhang and Hongyang Wang and Zhuofu Tao and Zhongyi Li and Bingyu Chen and Yaxin Wang and Zhiping Yu and Ting-Jung Lin and Lei He},
+  			year={2025},
+  			eprint={2505.24138},
+  			archivePrefix={arXiv},
+  			primaryClass={cs.LG},
+  			url={https://arxiv.org/abs/2505.24138}, 
+  }</code></pre>
+  	</div>
+</section>
+  <footer class="footer">
+  <div class="container">
+  	<div class="columns is-centered">
+  	  <div class="column is-8">
+  		<div class="content">
+
+  		  <p>
+  			This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+  			You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+  			Commons Attribution-ShareAlike 4.0 International License</a>.
+  		  </p>
+
+  		</div>
+  	  </div>
+  	</div>
+  </div>
+</footer>
+
+  
+  	  </body>
+  </html>
