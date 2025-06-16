@@ -271,11 +271,17 @@
             <div class="column"><img src="static/images/tab_perception.png" alt="Perception Task Results" class="results-image"></div>
             <div class="column"><img src="static/images/tab_multitask.png" alt="Interconnect and Analysis Results" class="results-image"></div>
         </div>
+        <p class="has-text-justified">
+            For Perception Tasks, while models show promise in recognizing local connectivity, their effectiveness deteriorates when performing comprehensive netlist extraction. For instance, Gemini-2.5-pro achieves the best overall results in component classification (94% accuracy), but all models are challenged by the diversity of component types. Even the best-generated netlists require substantial modifications to match the ground truth.
+        </p>
         <div class="has-text-centered" style="margin-top: 1rem;">
             <figure class="image" style="max-width: 600px; margin: auto;">
                  <img src="static/images/tab_design_tb.png" alt="Design Task Results" class="results-image">
             </figure>
         </div>
+        <p class="has-text-justified">
+            For Analysis and Design Tasks, some models can interpret circuit functionalities but often arrive at correct answers through flawed reasoning. A critical weakness is their poor understanding of performance trade-offs, a key skill for engineers, where the top-performing model, GPT-4o, only scored 58%. In design, models like Grok-3 and Claude-Sonnet perform best on simple circuits but fail on complex systems like SAR-ADCs. Crucially, no model could consistently generate syntactically correct testbenches, likely due to a lack of relevant training data.
+        </p>
     </div>
 </section>
 
@@ -286,6 +292,7 @@
         <figure class="image">
             <img src="static/images/data.png" alt="Data Statistics Pie Charts" style="width: 80%; height: auto; display: block; margin: 0 auto;">
         </figure>
+        <p class="has-text-justified">AMSbench is composed of approximately 8,000 test questions, with 6,000 for AMS-Perception, 2,000 for AMS-Analysis, and 68 for AMS-Design. The Perception tasks (visualized in the left pie chart) are categorized by difficulty based on component count—simple (<9), medium (9-16), and hard (>16). They cover various sub-tasks like Total Counting, Type-wise Counting, Element Classification, and Topology Generation. The Analysis tasks (right pie chart) are divided by the academic level required: Undergraduate (532 questions), Graduate (625 questions), and Engineer-level (100 questions). These tasks cover areas like Function recognition, Partitioning, Captioning, and Reasoning to test both visual understanding and deep domain knowledge.</p>
     </div>
 </section>
 
