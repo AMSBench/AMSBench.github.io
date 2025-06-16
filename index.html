@@ -1,376 +1,411 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-      <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-    <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
 
 
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-    <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
-    <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>AMSbench: A Comprehensive Benchmark for Evaluating MLLM Capabilities in AMS Circuits</title>
-  <link rel="icon" type="image/x-icon" href="static/images/logo.png">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
+  <title>AMSbench: A Comprehensive Benchmark for Evaluating MLLM Capabilities in AMS Circuits</title>
+  <link rel="icon" type="image/x-icon" href="static/images/logo.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
 
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
 </head>
 <body>
 
 
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">AMSbench: A Comprehensive Benchmark for Evaluating MLLM Capabilities in AMS Circuits</h1>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">AMSbench: A Comprehensive Benchmark for Evaluating MLLM Capabilities in AMS Circuits</h1>
 
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=m5NipB4AAAAJ&hl=en" target="_blank">Yichen Shi</a><sup>1,4,*</sup>,
-              </span>
-              <span class="author-block">
-                <a href="AUTHOR_LINK_HERE" target="_blank">Ze Zhang</a><sup>4,*</sup>,
-            	</span>
-  	  			<span class="author-block">
-  	  			  <a href="https://scholar.google.com/citations?user=UDzaFPIAAAAJ&hl=en" target="_blank">Hongyang Wang</a><sup>4,*</sup>,
-  	  			</span>
-  	  			<span class="author-block">
-  	  			  <a href="https://scholar.google.com/citations?user=MszI2TAAAAAJ&hl=zh-CN&oi=ao" target="_blank">Zhuofu Tao</a><sup>2</sup>,
-  	  			</span>
-  	  			<span class="author-block">
-  	  			  <a href="AUTHOR_LINK_HERE" target="_blank">Zhongyi Li</a><sup>1</sup>,
-  	  			</span>
-  	  			<span class="author-block">
-  	  			  <a href="AUTHOR_LINK_HERE" target="_blank">Bingyu Chen</a><sup>2</sup>,
-  	  			</span>
-  	  			<span class="author-block">
-  	  			  <a href="AUTHOR_LINK_HERE" target="_blank">Yaxin Wang</a><sup>2</sup>,
-  	  			</span>
-  	  			<span class="author-block">
-  	  			  <a href="https://scholar.google.com/citations?user=wU8x220AAAAJ&hl=en" target="_blank">Zhiping Yu</a><sup>3</sup>,
-  	  			</span>
-  	  			<span class="author-block">
-  	  			  <a href="https://scholar.google.com/citations?user=P8suglMAAAAJ&hl=zh-CN&oi=ao" target="_blank">Ting-Jung Lin</a><sup>4,**</sup>,
-  	  			</span>
-  	  			<span class="author-block">
-  	  			  <a href="https://scholar.google.com/citations?user=n_N-PJkAAAAJ&hl=zh-CN" target="_blank">Lei He</a><sup>1,2,4,**</sup>
-  	  			</span>
-  	  		  </div>
-  
-  	  		  <div class="is-size-5 publication-authors">
-  	  			<span class="author-block"><sup>1</sup>Shanghai Jiao Tong University</span>
-  	  			<span class="author-block"><sup>2</sup>University of California, Los Angeles</span>
-  	  			<span class="author-block"><sup>3</sup>Tsinghua University</span>
-  	  			<span class="author-block"><sup>4</sup>Eastern Institute of Technology, Ningbo</span>
-  	  			<span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-  	  			<span class="eql-cntrb"><small><br><sup>**</sup>Indicates Corresponding authors</small></span>
-  	  		  </div>
-  
-  	  				<div class="column has-text-centered">
-  	  				  <div class="publication-links">
-  	  						    	  						<span class="link-block">
-  	  						  <a href="https://arxiv.org/abs/2505.24138.pdf" target="_blank"
-  	  						  class="external-link button is-normal is-rounded is-dark">
-  	  						  <span class="icon">
-  	  							  <i class="fas fa-file-pdf"></i>
-  	  						  </span>
-  	  						  <span>Paper</span>
-  	  						</a>
-  	  					  </span>
-  	  					  
-  	  					    	  					  <span class="link-block">
-  	  						<a href="https://huggingface.co/datasets/wwhhyy/AMSBench" target="_blank"
-  	  						class="external-link button is-normal is-rounded is-dark">
-  	  						<span class="icon" style="font-size:18px">🤗</span>
-  	  						<span>Dataset</span>
-  	  					  </a>
-  	  					</span>
-  	  					
-  
-  	  					    	  					  <span class="link-block">
-  	  						<a href="static/pdfs/supplementary_material.pdf" target="_blank"
-  	  						class="external-link button is-normal is-rounded is-dark">
-  	  						<span class="icon">
-  	  							<i class="fas fa-file-pdf"></i>
-  	  						</span>
-  	  						<span>Supplementary</span>
-  	  					  </a>
-  	  					</span>
-  
-  	  				    	  				  <span class="link-block">
-  	  					<a href="https://github.com/Why0912/AMSBench" target="_blank"
-  	  					class="external-link button is-normal is-rounded is-dark">
-  	  					<span class="icon">
-  	  						<i class="fab fa-github"></i>
-  	  					</span>
-  	  					<span>Code</span>
-  	  				  </a>
-  	  				</span>
-  
-  	  			    	  			  <span class="link-block">
-  	  				<a href="https://arxiv.org/abs/2505.24138v1" target="_blank"
-  	  				class="external-link button is-normal is-rounded is-dark">
-  	  				<span class="icon">
-  	  					<i class="ai ai-arxiv"></i>
-  	  				</span>
-  	  				<span>arXiv</span>
-  	  			  </a>
-  	  			</span>
-  	  			</div>
-  	  		  </div>
-  	  		</div>
-  	  	  </div>
-  	  	</div>
-  	  </div>
-  </section>
-  
-  
-<section class="hero teaser">
-  <div class="hero-body" style="padding: 0;">
-  	<figure class="image is-fullwidth">
-  	  <img src="static/images/AMSBench_banner.png" alt="AMSbench Teaser"
-  			 style="width: 60%; height: auto; display: block; margin: 0 auto;">
-  	</figure>
-  	<h2 class="subtitle has-text-centered mt-4">
-  	  AMSbench: A Comprehensive Benchmark for Evaluating MLLM Capabilities in AMS Circuits
-  	</h2>
-  </div>
-</section>
-  
-  
-  
-  
-  
-<section class="section">
-  <div class="container is-max-desktop">
-  	<h2 class="title is-3">Abstract</h2>
-  	<div class="content has-text-justified">
-  	  <p>
-  		Analog/Mixed-Signal (AMS) circuits play a critical role in the integrated circuit (IC) industry. 
-  		However, automating AMS circuit design has remained a longstanding challenge due to its difficulty and complexity. 
-  		Recent advances in Multi-modal Large Language Models (MLLMs) offer promising potential for supporting AMS circuit analysis and design. 
-  		However, current research typically evaluates MLLMs on isolated tasks within the domain, 
-  		lacking a comprehensive benchmark that systematically assesses model capabilities across diverse AMS-related challenges.
-  	  </p>
-  	  <p>
-  		To address this gap, we introduce <strong>AMSbench</strong>, a benchmark suite designed to evaluate MLLM performance across critical tasks 
-  		including circuit schematic perception, circuit analysis, and circuit design. 
-  		AMSbench comprises approximately 8000 test questions spanning multiple difficulty levels and assesses eight prominent models, 
-  		encompassing both open-source and proprietary solutions such as Qwen 2.5-VL and Gemini 2.5 Pro.
-  	  </p>
-  	  <p>
-  		Our evaluation highlights significant limitations in current MLLMs, particularly in complex multi-modal reasoning and sophisticated circuit design tasks. 
-  		These results underscore the necessity of advancing MLLMs’ understanding and effective application of circuit-specific knowledge, 
-  		thereby narrowing the existing performance gap relative to human expertise and moving toward fully automated AMS circuit design workflows.
-  		Our data is released at 
-  		<a href="https://huggingface.co/datasets/wwhhyy/AMSBench" target="_blank">this URL</a>.
-  	  </p>
-  	</div>
-  </div>
-</section>
-  
-<section class="hero is-light is-small">
-  <div class="hero-body has-text-centered">
-  	<h1 class="title is-1 mmmu">
-  	  <span class="mmmu">AMSBench Benchmark</span>
-  	</h1>
-  </div>
-</section>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=m5NipB4AAAAJ&hl=en" target="_blank">Yichen Shi</a><sup>1,4,*</sup>,
+              </span>
+              <span class="author-block">
+                <a href="AUTHOR_LINK_HERE" target="_blank">Ze Zhang</a><sup>4,*</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=UDzaFPIAAAAJ&hl=en" target="_blank">Hongyang Wang</a><sup>4,*</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=MszI2TAAAAAJ&hl=zh-CN&oi=ao" target="_blank">Zhuofu Tao</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="AUTHOR_LINK_HERE" target="_blank">Zhongyi Li</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="AUTHOR_LINK_HERE" target="_blank">Bingyu Chen</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="AUTHOR_LINK_HERE" target="_blank">Yaxin Wang</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=wU8x220AAAAJ&hl=en" target="_blank">Zhiping Yu</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=P8suglMAAAAJ&hl=zh-CN&oi=ao" target="_blank">Ting-Jung Lin</a><sup>4,**</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=n_N-PJkAAAAJ&hl=zh-CN" target="_blank">Lei He</a><sup>1,2,4,**</sup>
+              </span>
+            </div>
+  
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Shanghai Jiao Tong University</span>
+              <span class="author-block"><sup>2</sup>University of California, Los Angeles</span>
+              <span class="author-block"><sup>3</sup>Tsinghua University</span>
+              <span class="author-block"><sup>4</sup>Eastern Institute of Technology, Ningbo</span>
+              <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+              <span class="eql-cntrb"><small><br><sup>**</sup>Indicates Corresponding authors</small></span>
+            </div>
+  
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/abs/2505.24138.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+                      
+                    <!-- hugging face link -->
+                    <span class="link-block">
+                      <a href="https://huggingface.co/datasets/wwhhyy/AMSBench" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon" style="font-size:18px">🤗</span>
+                      <span>Dataset</span>
+                    </a>
+                  </span>
+                    
 
+                    <!-- Supplementary PDF link -->
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
 
-  
-<section class="hero teaser">
-  <div class="hero-body" style="padding: 0;">
-  	<figure class="image is-fullwidth">
-  	  <img src="static/images/rada.png" alt="AMSbench Teaser"
-  			 style="width: 40%; height: auto; display: block; margin: 0 auto;">
-  	</figure>
-  	<h2 class="subtitle has-text-centered mt-4">
-  	  This radar chart shows the comparative performance of leading MLLMs across 14 sub-tasks, highlighting the strengths and weaknesses in areas like reasoning, element classification, and circuit design.
-  	</h2>
-  </div>
-</section>
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/Why0912/AMSBench" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
 
-<section class="hero teaser">
-  <div class="hero-body" style="padding: 0;">
-  	<figure class="image is-fullwidth">
-  	  <img src="static/images/data_collection.png" alt="AMSbench Teaser"
-  			 style="width: 40%; height: auto; display: block; margin: 0 auto;">
-  	</figure>
-  	<h2 class="subtitle has-text-centered mt-4">
-  	  Overview of the data collection and curation pipeline for AMSBench. We gather diverse data from research papers, textbooks, and datasheets, then process them into structured formats for benchmark creation.
-  	</h2>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="hero-body" style="padding: 0;">
-  	<figure class="image is-fullwidth">
-  	  <img src="static/images/question_generation.png" alt="AMSbench Teaser"
-  			 style="width: 40%; height: auto; display: block; margin: 0 auto;">
-  	</figure>
-  	<h2 class="subtitle has-text-centered mt-4">
-  	  Examples of question generation for perception tasks (left) and analysis tasks (right), demonstrating the variety of questions designed to test different MLLM capabilities.
-  	</h2>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="hero-body" style="padding: 0;">
-  	<figure class="image is-fullwidth">
-  	  <img src="static/images/tab_perception.png" alt="AMSbench Teaser"
-  			 style="width: 40%; height: auto; display: block; margin: 0 auto;">
-  	</figure>
-  	<h2 class="subtitle has-text-centered mt-4">
-  	  This table presents the performance of various models on fundamental perception tasks, including component counting, type-wise counting, element classification, and location description.
-  	</h2>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="hero-body" style="padding: 0;">
-  	<figure class="image is-fullwidth">
-  	  <img src="static/images/tab_multitask.png" alt="AMSbench Teaser"
-  			 style="width: 40%; height: auto; display: block; margin: 0 auto;">
-  	</figure>
-  	<h2 class="subtitle has-text-centered mt-4">
-  	  This table details model performance on complex interconnect perception and circuit analysis tasks, such as connection judgment, topology generation, reasoning, and function identification.
-  	</h2>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="hero-body" style="padding: 0;">
-  	<figure class="image is-fullwidth">
-  	  <img src="static/images/tab_design_tb.png" alt="AMSbench Teaser"
-  			 style="width: 40%; height: auto; display: block; margin: 0 auto;">
-  	</figure>
-  	<h2 class="subtitle has-text-centered mt-4">
-  	  This table shows the pass@k results for the circuit design and testbench design tasks, highlighting the significant challenges models face in generating functional and verifiable circuits.
-  	</h2>
-  </div>
-</section>
-
-<section class="section">
-  <div class="columns is-centered has-text-centered">
-  	<h2 class="title is-1 mmmu">
-  	  <span class="mmmu">Examples of various tasks</span>
-  	</h2>
-  </div>
-</section>
-  
-<section class="hero is-small">
-  <div class="hero-body">
-  	<div class="container">
-  	  <div id="results-carousel" class="carousel results-carousel">
-  	  	<div class="item">
-  	  	    	  	  <img src="static/images/perception.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto;" />
-  	  	  <h2 class="subtitle has-text-centered">
-  	  	  	<b>Perception Task Example:</b> Testing capabilities like component counting, classification, and connectivity identification from a schematic.
-  	  	  </h2>
-  	  	</div>
-  	  	<div class="item">
-  	  	    	  	  <img src="static/images/partition.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto;" />
-  	  	  <h2 class="subtitle has-text-centered">
-  	  	  	<b>Partition Task Example:</b> The model must identify all constituent structures within a complex circuit, such as a differential pair and Miller compensation.
-  	  	  </h2>
-  	  	</div>
-  	  	<div class="item">
-  	  	    	  	  <img src="static/images/reasoning.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto;" />
-  	  	  <h2 class="subtitle has-text-centered">
-  			   <b>Reasoning Task Example:</b> Based on the circuit diagram, the model must explain why it functions as an operational amplifier.
-  	  	  </h2>
-  	  	</div>
-  	  	<div class="item">
-  	  	    	  	  <img src="static/images/function.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto;" />
-  	  	  <h2 class="subtitle has-text-centered">
-  			   <b>Function Task Example:</b> The model must identify the intended function of the given circuit.
-  	  	  </h2>
-  	  	</div>
-  	  </div>
-	</div>
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2505.24138v1" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+
 <section class="hero teaser">
-  <div class="hero-body" style="padding: 0;">
-  	<figure class="image is-fullwidth">
-  	  <img src="static/images/data.png" alt="AMSbench Teaser"
-  			 style="width: 70%; height: auto; display: block; margin: 0 auto;">
-  	</figure>
-  	<h2 class="subtitle has-text-centered mt-4">
-  	  Data statistics for the perception task (left) and analysis task (right), showing the distribution of questions across different sub-tasks and difficulty levels.
-  	</h2>
-  </div>
+  <div class="hero-body" style="padding: 0;">
+    <figure class="image is-fullwidth">
+      <img src="static/images/AMSBench_banner.png" alt="AMSbench Teaser"
+           style="width: 60%; height: auto; display: block; margin: 0 auto;">
+    </figure>
+    <h2 class="subtitle has-text-centered mt-4">
+      AMSbench: A Comprehensive Benchmark for Evaluating MLLM Capabilities in AMS Circuits
+    </h2>
+  </div>
 </section>
 
+
+
+
+
+<!-- 摘要摘要 -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Abstract</h2>
+    <div class="content">
+      <p>
+        Analog/Mixed-Signal (AMS) circuits play a critical role in the integrated circuit (IC) industry. 
+        However, automating AMS circuit design has remained a longstanding challenge due to its difficulty and complexity. 
+        Recent advances in Multi-modal Large Language Models (MLLMs) offer promising potential for supporting AMS circuit analysis and design. 
+        However, current research typically evaluates MLLMs on isolated tasks within the domain, 
+        lacking a comprehensive benchmark that systematically assesses model capabilities across diverse AMS-related challenges.
+      </p>
+      <p>
+        To address this gap, we introduce <strong>AMSbench</strong>, a benchmark suite designed to evaluate MLLM performance across critical tasks 
+        including circuit schematic perception, circuit analysis, and circuit design. 
+        AMSbench comprises approximately 8000 test questions spanning multiple difficulty levels and assesses eight prominent models, 
+        encompassing both open-source and proprietary solutions such as Qwen 2.5-VL and Gemini 2.5 Pro.
+      </p>
+      <p>
+        Our evaluation highlights significant limitations in current MLLMs, particularly in complex multi-modal reasoning and sophisticated circuit design tasks. 
+        These results underscore the necessity of advancing MLLMs’ understanding and effective application of circuit-specific knowledge, 
+        thereby narrowing the existing performance gap relative to human expertise and moving toward fully automated AMS circuit design workflows.
+        Our data is released at 
+        <a href="https://huggingface.co/datasets/wwhhyy/AMSBench" target="_blank">this URL</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mmmu">
+      <span class="mmmu">AMSBench Benchmark</span>
+    </h1>
+  </div>
+</section>
+
+
+  
+<section class="hero teaser">
+  <div class="hero-body" style="padding: 0;">
+    <figure class="image is-fullwidth">
+      <img src="static/images/rada.png" alt="AMSbench Teaser"
+           style="width: 40%; height: auto; display: block; margin: 0 auto;">
+    </figure>
+    <h2 class="subtitle has-text-centered mt-4">
+      Performance across MLLMs in various tasks.
+    </h2>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body" style="padding: 0;">
+    <figure class="image is-fullwidth">
+      <img src="static/images/data_collection.png" alt="AMSbench Teaser"
+           style="width: 40%; height: auto; display: block; margin: 0 auto;">
+    </figure>
+    <h2 class="subtitle has-text-centered mt-4">
+      Details of AMSBench Data Collection.
+    </h2>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body" style="padding: 0;">
+    <figure class="image is-fullwidth">
+      <img src="static/images/question_generation.png" alt="AMSbench Teaser"
+           style="width: 40%; height: auto; display: block; margin: 0 auto;">
+    </figure>
+    <h2 class="subtitle has-text-centered mt-4">
+       Details of AMSBench Question Generation.
+    </h2>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body" style="padding: 0;">
+    <figure class="image is-fullwidth">
+      <img src="static/images/tab_perception.png" alt="AMSbench Teaser"
+           style="width: 40%; height: auto; display: block; margin: 0 auto;">
+    </figure>
+    <h2 class="subtitle has-text-centered mt-4">
+       Results of AMSBench Perception Task.
+    </h2>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body" style="padding: 0;">
+    <figure class="image is-fullwidth">
+      <img src="static/images/tab_multitask.png" alt="AMSbench Teaser"
+           style="width: 40%; height: auto; display: block; margin: 0 auto;">
+    </figure>
+    <h2 class="subtitle has-text-centered mt-4">
+       Results of AMSBench various Task.
+    </h2>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body" style="padding: 0;">
+    <figure class="image is-fullwidth">
+      <img src="static/images/tab_design_tb.png" alt="AMSbench Teaser"
+           style="width: 40%; height: auto; display: block; margin: 0 auto;">
+    </figure>
+    <h2 class="subtitle has-text-centered mt-4">
+       Results of AMSBench various Task.
+    </h2>
+  </div>
+</section>
+
+<section class="section">
+  <div class="columns is-centered has-text-centered">
+    <h2 class="title is-1 mmmu">
+      <span class="mmmu">Examples of various tasks</span>
+    </h2>
+  </div>
+</section>
+  
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/perception.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto;" />
+          <h2 class="subtitle has-text-centered">
+            Examples of Perception Task.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/partition.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto;" />
+          <h2 class="subtitle has-text-centered">
+            Examples of Partition Task.
+          </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/perception.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto;" />
+        <h2 class="subtitle has-text-centered">
+         Examples of Reasoning Task.
+       </h2>
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/perception.png" alt="MY ALT TEXT" style="display: block; margin: 0 auto;" />
+      <h2 class="subtitle has-text-centered">
+        Examples of Function Task.
+      </h2>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+<section class="hero teaser">
+  <div class="hero-body" style="padding: 0;">
+    <figure class="image is-fullwidth">
+      <img src="static/images/data.png" alt="AMSbench Teaser"
+           style="width: 70%; height: auto; display: block; margin: 0 auto;">
+    </figure>
+    <h2 class="subtitle has-text-centered mt-4">
+      Data statistics.
+    </h2>
+  </div>
+</section>
+
+
+
+
+<!-- Paper poster -->
 <section class="hero is-small is-light">
-  <div class="hero-body">
-  	<div class="container">
-  	  <h2 class="title">Poster</h2>
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
 
-  	  <iframe  src="static/pdfs/AMSbench_full.pdf" width="100%" height="550">
-  			</iframe>
-  		  
-  	</div>
-    </div>
-  </section>
-  <section class="section" id="BibTeX">
-  	<div class="container is-max-desktop content">
-  	  <h2 class="title">BibTeX</h2>
-  	  <pre><code>@misc{shi2025amsbenchcomprehensivebenchmarkevaluating,
-  			title={AMSbench: A Comprehensive Benchmark for Evaluating MLLM Capabilities in AMS Circuits}, 
-  			author={Yichen Shi and Ze Zhang and Hongyang Wang and Zhuofu Tao and Zhongyi Li and Bingyu Chen and Yaxin Wang and Zhiping Yu and Ting-Jung Lin and Lei He},
-  			year={2025},
-  			eprint={2505.24138},
-  			archivePrefix={arXiv},
-  			primaryClass={cs.LG},
-  			url={https://arxiv.org/abs/2505.24138}, 
-  }</code></pre>
-  	</div>
+      <iframe  src="static/pdfs/AMSbench_full.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section>
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{shi2025amsbenchcomprehensivebenchmarkevaluating,
+        title={AMSbench: A Comprehensive Benchmark for Evaluating MLLM Capabilities in AMS Circuits}, 
+        author={Yichen Shi and Ze Zhang and Hongyang Wang and Zhuofu Tao and Zhongyi Li and Bingyu Chen and Yaxin Wang and Zhiping Yu and Ting-Jung Lin and Lei He},
+        year={2025},
+        eprint={2505.24138},
+        archivePrefix={arXiv},
+        primaryClass={cs.LG},
+        url={https://arxiv.org/abs/2505.24138}, 
+  }</code></pre>
+    </div>
 </section>
-  <footer class="footer">
-  <div class="container">
-  	<div class="columns is-centered">
-  	  <div class="column is-8">
-  		<div class="content">
+<!--End BibTex citation -->
 
-  		  <p>
-  			This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-  			You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-  			Commons Attribution-ShareAlike 4.0 International License</a>.
-  		  </p>
 
-  		</div>
-  	  </div>
-  	</div>
-  </div>
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
 
-  
-  	  </body>
-  </html>
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
