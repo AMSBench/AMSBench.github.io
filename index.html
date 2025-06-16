@@ -36,6 +36,78 @@
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
+  <head>
+    <link rel="stylesheet" href="static/css/index.css">
+  
+    <style>
+      /* * 1. 让下拉菜单固定在右上角，不随页面滚动 
+       */
+      .custom-sticky-dropdown {
+        position: fixed; /* 固定定位，相对于浏览器窗口 */
+        top: 20px;       /* 距离窗口顶部20像素 */
+        right: 20px;      /* 距离窗口右侧20像素 */
+        z-index: 1000;   /* 设置一个很高的层级，确保它在所有内容的上方 */
+      }
+  
+      /* * 2. 让按钮变得更大、更醒目 
+       */
+      .custom-sticky-dropdown > .navbar-link {
+        font-size: 1.4em; /* 增大文字大小 */
+        font-weight: bold; /* 文字加粗 */
+        color: #fff !important; /* 设置文字颜色为白色 */
+        background-color: #3273dc; /* 设置一个醒目的蓝色背景 (Bulma的蓝色) */
+        border-radius: 8px; /* 圆角效果 */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* 添加阴影，增加立体感 */
+        padding:20px 40px; /* 增加内边距，让按钮更大 */
+        transition: all 0.2s ease-in-out; /* 添加平滑过渡效果 */
+
+        display: flex;                 /* 启用Flexbox布局 */
+        justify-content: space-between;/* 让内部元素两端对齐 */
+        align-items: center;           /* 垂直居中对齐 */
+        gap: 15px;                     /*在文字和图标之间增加固定间距*/
+      }
+  
+      /* 鼠标悬停时，按钮轻微上浮并变亮 */
+      .custom-sticky-dropdown:hover > .navbar-link {
+        transform: translateY(-2px); /* 向上移动2像素 */
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); /* 阴影变深 */
+        background-color: #3e81e2;
+      }
+  
+      /* * 3. 增大图标尺寸并修改颜色
+       */
+      .custom-sticky-dropdown .fa-angle-down {
+        font-size: 1.5em; /* 将图标放大到文字的1.5倍 */
+        color: #fff;       /* 确保图标也是白色 */
+      }
+  
+      /* * 4. 隐藏Bulma默认的箭头 (重要)
+       */
+      .custom-sticky-dropdown > .navbar-link::after {
+        display: none;
+      }
+  
+      /* * 5. 美化下拉菜单的样式
+       */
+      .custom-sticky-dropdown .navbar-dropdown {
+        border-radius: 8px; /* 给下拉菜单也加上圆角 */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* 给下拉菜单加阴影 */
+        border: none; /* 移除默认边框 */
+        top: calc(100%); /* 让下拉菜单和按钮之间有一点点空隙 */
+        width: 300px; 
+      }
+      .custom-sticky-dropdown .navbar-dropdown .navbar-item {
+        display: block;
+
+        font-size: 16px; 
+        font-weight: bold; 
+        white-space: nowrap;      /* 强制文字不换行 */
+        overflow: hidden;         /* 隐藏超出容器部分的内容 */
+        text-overflow: ellipsis;  /* 将被隐藏的部分显示为省略号(...) */
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -45,6 +117,30 @@
   <script src="static/js/index.js"></script>
 </head>
 <body>
+  <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable custom-sticky-dropdown">
+          <a class="navbar-link">
+            Our Related Work   
+            <span class="icon is-small is-right">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </a>
+  
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item" href="https://amsnet2-0.github.io/AMSNet2.0.github.io/" target="_blank">
+              AMSnet 2.0: A Large AMS Databasenwith AI Segmentation for Net Detection
+            </a>
+            <hr class="navbar-divider">
+            <div class="navbar-item">
+              More content is coming soon...
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
 
 
   <section class="hero">
@@ -292,7 +388,7 @@
         <figure class="image">
             <img src="static/images/data.png" alt="Data Statistics Pie Charts" style="width: 80%; height: auto; display: block; margin: 0 auto;">
         </figure>
-        <p class="has-text-centered">AMSbench is composed of approximately 8,000 test questions, with 6,000 for AMS-Perception, 2,000 for AMS-Analysis, and 68 for AMS-Design. The Perception tasks (visualized in the left pie chart) are categorized by difficulty based on component count—simple (<9), medium (9-16), and hard (>16). They cover various sub-tasks like Total Counting, Type-wise Counting, Element Classification, and Topology Generation. The Analysis tasks (right pie chart) are divided by the academic level required: Undergraduate (532 questions), Graduate (625 questions), and Engineer-level (100 questions). These tasks cover areas like Function recognition, Partitioning, Captioning, and Reasoning to test both visual understanding and deep domain knowledge.</p>
+        <p class="has-text-justified">AMSbench is composed of approximately 8,000 test questions, with 6,000 for AMS-Perception, 2,000 for AMS-Analysis, and 68 for AMS-Design. The Perception tasks (visualized in the left pie chart) are categorized by difficulty based on component count—simple (<9), medium (9-16), and hard (>16). They cover various sub-tasks like Total Counting, Type-wise Counting, Element Classification, and Topology Generation. The Analysis tasks (right pie chart) are divided by the academic level required: Undergraduate (532 questions), Graduate (625 questions), and Engineer-level (100 questions). These tasks cover areas like Function recognition, Partitioning, Captioning, and Reasoning to test both visual understanding and deep domain knowledge.</p>
     </div>
 </section>
 
